@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon | The First Unified Growth Operating System</title>
+    <meta name="description" content="The first unified growth operating system for modern DTC brands. Measure brand impact. Connect web behavior to contribution margin and LTV. Auto-generate campaigns. Model scenarios that predict real outcomes.">
+    <meta property="og:title" content="Marathon | The First Unified Growth Operating System">
+    <meta property="og:description" content="The first unified growth operating system. Measure brand. Connect web to LTV. Auto-generate campaigns. Model scenarios. One metric: incremental lifetime value.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn.prod.website-files.com/67a4c53d7ce1c20ef8612c32/67bcf49440e91e8991774bce_favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="https://cdn.prod.website-files.com/67a4c53d7ce1c20ef8612c32/67a4c8da2c0d10ba0b93b863_marathon-logo.svg" alt="Marathon" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="#platform" class="nav-link">Platform</a>
+                <a href="#approach" class="nav-link">Approach</a>
+                <a href="#deployment" class="nav-link">How It Works</a>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.marathondataco.com/sign-in" class="btn-tertiary">Log in</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#platform" class="mobile-nav-link">Platform</a>
+            <a href="#approach" class="mobile-nav-link">Approach</a>
+            <a href="#deployment" class="mobile-nav-link">How It Works</a>
+            <div class="mobile-menu-cta">
+                <a href="https://app.marathondataco.com/sign-in" class="btn-secondary btn-block">Log in</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Eyebrow - Lead with credibility -->
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-tag">From the co-founders of Chubbies and Loop Returns</span>
+                    <span class="eyebrow-subline">We've used every analytics tool. They're all built for smaller brands. We built what scaling operators actually need.</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="hero-headline">
+                    The first unified<br>
+                    <span class="headline-accent">growth operating system</span><br>
+                    for modern consumer brands
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="hero-subheadline">
+                    For brands doing $25M–$1B+. Measure brand with testable attribution. Connect web behavior to product-level profit and LTV. Auto-generate campaigns from what actually works. Model scenarios that predict real outcomes. One system. One metric: incremental lifetime value.
+                </p>
+
+                <!-- Inline Email Capture - This IS the CTA -->
+                <div class="hero-capture" id="leadCapture">
+                    <!-- Step 1: Email -->
+                    <div class="lead-step" id="step1" data-step="1">
+                        <form class="hero-form" id="emailForm">
+                            <div class="input-group">
+                                <input 
+                                    type="email" 
+                                    id="leadEmail" 
+                                    placeholder="Enter your work email"
+                                    required
+                                    autocomplete="off"
+                                >
+                                <button type="submit" class="btn-primary">
+                                    <span>Request a Call</span>
+                                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"/>
+                                        <path d="m12 5 7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="input-hint">Talk directly with Preston (Marathon, Chubbies & Loop co-founder) to see if you're a fit</p>
+                            <p class="scarcity-note">Now accepting applicants for the <span class="cohort-badge" id="cohortBadge">Q2 2026</span> launch cohort</p>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Questions (hidden initially) -->
+                    <div class="lead-step hidden" id="step2" data-step="2">
+                        <form class="lead-form" id="questionsForm">
+                            <div class="form-field">
+                                <label class="field-label">What are you most interested in?</label>
+                                <span class="field-hint">(Select all that apply)</span>
+                                <div class="checkbox-group" id="interestsGroup">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="interests" value="attribution">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Top-of-funnel measurement</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="interests" value="creative">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Full-funnel creative analytics</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="interests" value="merchandising">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Web merchandising & LTV</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="interests" value="planning">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Demand planning & forecasting</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="problems" class="field-label">What's your biggest challenge right now?</label>
+                                <textarea 
+                                    id="problems" 
+                                    rows="2" 
+                                    placeholder="e.g., We can't measure brand impact..."
+                                ></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">
+                                <span>Continue</span>
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Calendar Selection (hidden initially) -->
+                    <div class="lead-step hidden" id="step3" data-step="3">
+                        <div class="calendar-picker">
+                            <p class="calendar-intro">Pick a time for your demo:</p>
+                            <div class="slots-loading" id="slotsLoading">
+                                <div class="spinner"></div>
+                                <span>Finding available times...</span>
+                            </div>
+                            <div class="slots-list hidden" id="slotsList"></div>
+                            <button type="button" class="btn-primary btn-full hidden" id="bookBtn">
+                                <span>Book Meeting</span>
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation (hidden initially) -->
+                    <div class="lead-step hidden" id="step4" data-step="4">
+                        <div class="confirmation">
+                            <div class="confirmation-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="m9 11 3 3L22 4"/>
+                                </svg>
+                            </div>
+                            <h3 class="confirmation-title">You're all set!</h3>
+                            <p class="confirmation-text" id="confirmationText">Check your email for the invite.</p>
+                            <p class="confirmation-meeting" id="confirmationMeeting"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Gradient orbs for visual interest -->
+        <div class="hero-bg-effects">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+    </section>
+
+    <!-- Social Proof - Customer Names -->
+    <section class="social-proof">
+        <div class="section-container">
+            <p class="proof-label">Trusted by growth teams at</p>
+            <div class="customer-names">
+                <span class="customer-name">HexClad</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">Tracksmith</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">DUER</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">Qure Skincare</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">Montana Knife Company</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">Posh Peanut</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">Topo Designs</span>
+                <span class="customer-divider"></span>
+                <span class="customer-name">Bioma</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems We Solve Section -->
+    <section id="platform" class="problems-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Problems</span>
+                <h2 class="section-headline">Your tools weren't built for brands at your stage</h2>
+                <p class="section-subtext">Most analytics platforms optimize for volume—smaller brands, simpler questions. Scaling brands need sophistication, granularity, and integration that doesn't exist elsewhere.</p>
+            </div>
+
+            <div class="problems-grid">
+                <!-- Problem 01: MEASURE - Brand Attribution -->
+                <div class="problem-card">
+                    <div class="problem-number">01</div>
+                    <h3 class="problem-title">"Is my brand spending actually doing anything?"</h3>
+                    <p class="problem-desc">You have MTA tools. MMM tools. In-platform metrics. Incrementality tests. But they all disagree—and none of them measure brand. So top-of-funnel remains a black box. You're spending millions on faith.</p>
+                    <div class="problem-solution">
+                        <span class="solution-label">Marathon Solution:</span>
+                        <span class="solution-text"><strong>Triangulated Brand Measurement</strong>—unified attribution across MTA, MMM, and incrementality with codified weights you can audit. Run tests. Verify predictions. Finally, measurement you can trust because you can test it.</span>
+                    </div>
+                </div>
+
+                <!-- Problem 02: UNDERSTAND - Web Analytics → Financial Metrics -->
+                <div class="problem-card">
+                    <div class="problem-number">02</div>
+                    <h3 class="problem-title">"Why can't I connect my website to actual profit?"</h3>
+                    <p class="problem-desc">GA shows pageviews. Shopify shows orders. But which products drive the best contribution margin? Which lead to high-LTV customers? Where should you send traffic? What inventory should you buy? The data lives in silos that never answer the real questions.</p>
+                    <div class="problem-solution">
+                        <span class="solution-label">Marathon Solution:</span>
+                        <span class="solution-text"><strong>Web Analytics → Financial Metrics</strong>—the first system connecting website behavior to product-level contribution margin, customer LTV, and new vs. repeat. Know exactly where to send traffic, what products to prioritize, and what inventory to buy.</span>
+                    </div>
+                </div>
+
+                <!-- Problem 03: AUTOMATE - Intelligence-Driven Creative -->
+                <div class="problem-card">
+                    <div class="problem-number">03</div>
+                    <h3 class="problem-title">"Scaling creative requires scaling headcount"</h3>
+                    <p class="problem-desc">You know which products perform. You know which pages convert. But turning those insights into campaigns still requires an army of people. AI tools promise scale, but without real data, they just produce slop faster.</p>
+                    <div class="problem-solution">
+                        <span class="solution-label">Marathon Solution:</span>
+                        <span class="solution-text"><strong>Intelligence-Driven Auto-Generation</strong>—auto-generate ads and campaigns triggered by your actual product economics. High-LTV products. Winning pages. Contribution margin signals. Not random AI—creative that's informed by what actually drives profit.</span>
+                    </div>
+                </div>
+
+                <!-- Problem 04: MODEL - Connected Growth Planning -->
+                <div class="problem-card">
+                    <div class="problem-number">04</div>
+                    <h3 class="problem-title">"Why is annual planning such a nightmare?"</h3>
+                    <p class="problem-desc">Planning takes months. Forecasts are guesswork. You can't model "what if we cut brand spend" or "what if we launch this product" because the underlying data isn't connected. So you build spreadsheets on top of spreadsheets and pray.</p>
+                    <div class="problem-solution">
+                        <span class="solution-label">Marathon Solution:</span>
+                        <span class="solution-text"><strong>Connected Growth Modeling</strong>—because all your data flows through one system, model any scenario and get outputs in incremental contribution margin and LTV. Not vanity metrics. The actual numbers your CFO cares about.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Stack Section -->
+    <section id="approach" class="platform-stack">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Platform</span>
+                <h2 class="section-headline">Four capabilities. One metric.</h2>
+                <p class="section-subtext">Every tool outputs the same thing: incremental contribution margin and lifetime value. The gold standard for modern growth teams.</p>
+            </div>
+
+            <!-- Differentiator Statement -->
+            <div class="differentiator-statement">
+                <p class="diff-statement-text">"What's the ROI of my entire marketing operation?"</p>
+                <p class="diff-statement-sub">Not channel-level vanity metrics. Not blended ROAS. Incremental contribution margin and customer lifetime value—the only numbers your CFO actually cares about.</p>
+            </div>
+            
+            <!-- Visual Stack Diagram - MEASURE → UNDERSTAND → AUTOMATE → MODEL -->
+            <div class="stack-visual">
+                <div class="stack-layers">
+                    <!-- Layer 1: MEASURE - Triangulated Brand Attribution -->
+                    <div class="stack-layer layer-1">
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                    <path d="M2 12h20"/>
+                                </svg>
+                            </div>
+                            <div class="layer-text">
+                                <h3 class="layer-title">Triangulated Brand Measurement</h3>
+                                <p class="layer-desc">Unified attribution across MTA, MMM, and incrementality tests. Codified weights you can audit. Predictions you can test. The foundation everything else builds on.</p>
+                            </div>
+                        </div>
+                        <span class="layer-tag">Measure</span>
+                    </div>
+
+                    <!-- Layer 2: UNDERSTAND - Web Analytics → Financial Metrics -->
+                    <div class="stack-layer layer-2">
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="8" cy="21" r="1"/>
+                                    <circle cx="19" cy="21" r="1"/>
+                                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                                </svg>
+                            </div>
+                            <div class="layer-text">
+                                <h3 class="layer-title">Web Intelligence</h3>
+                                <p class="layer-desc">Connect website behavior to product-level contribution margin and LTV. Know where to send traffic, what products to prioritize, what inventory to buy. Decision-ready insights, not just data.</p>
+                            </div>
+                        </div>
+                        <span class="layer-tag">Understand</span>
+                    </div>
+
+                    <!-- Layer 3: AUTOMATE - Intelligence-Driven Creative -->
+                    <div class="stack-layer layer-3">
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                                    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                                </svg>
+                            </div>
+                            <div class="layer-text">
+                                <h3 class="layer-title">Creative Automation</h3>
+                                <p class="layer-desc">Auto-generate ads and campaigns triggered by high-LTV products, winning pages, and contribution margin signals. Intelligent automation—informed by layers 1 and 2, not random AI.</p>
+                            </div>
+                        </div>
+                        <span class="layer-tag">Automate</span>
+                    </div>
+
+                    <!-- Layer 4: MODEL - Connected Growth Planning -->
+                    <div class="stack-layer layer-4">
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="m19 9-5 5-4-4-3 3"/>
+                                </svg>
+                            </div>
+                            <div class="layer-text">
+                                <h3 class="layer-title">Growth Modeling</h3>
+                                <p class="layer-desc">Model any scenario with connected data—brand spend, product launches, channel shifts. Outputs in incremental CM and LTV. Real financial outcomes your CFO will trust.</p>
+                            </div>
+                        </div>
+                        <span class="layer-tag">Model</span>
+                    </div>
+                </div>
+
+                <!-- Connecting Lines -->
+                <div class="stack-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-pulse"></div>
+                </div>
+            </div>
+
+            <!-- Value Statement -->
+            <div class="platform-value">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <p class="value-text">
+                        <span class="value-highlight">Make better decisions faster</span>—without hiring more analysts
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Model Section -->
+    <section id="deployment" class="deployment-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-eyebrow">How It Works</span>
+                <h2 class="section-headline">Forward-deployed, then yours to run</h2>
+                <p class="section-subtext">We're not an agency. We deploy experts to customize the platform for your business, train your team, then hand it off.</p>
+            </div>
+
+            <div class="deployment-timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Deploy Experts</h3>
+                        <p class="step-desc">Our team embeds with yours to understand your business, data, and goals. We configure the platform to your specific needs.</p>
+                        <span class="step-duration">2-4 weeks</span>
+                    </div>
+                </div>
+
+                <div class="timeline-connector"></div>
+
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Customize Platform</h3>
+                        <p class="step-desc">Connect your data sources, configure your measurement model, and set up the dashboards and automations specific to your business.</p>
+                        <span class="step-duration">4-6 weeks</span>
+                    </div>
+                </div>
+
+                <div class="timeline-connector"></div>
+
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Train Your Team</h3>
+                        <p class="step-desc">Comprehensive training for your team. We don't just hand over software—we ensure your team can run it confidently.</p>
+                        <span class="step-duration">2-3 weeks</span>
+                    </div>
+                </div>
+
+                <div class="timeline-connector"></div>
+
+                <div class="timeline-step step-final">
+                    <div class="step-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <path d="m9 11 3 3L22 4"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">You Run It</h3>
+                        <p class="step-desc">The platform is yours. No ongoing agency dependency. We provide support, but you own and operate the system.</p>
+                        <span class="step-duration">Ongoing ownership</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Differentiator -->
+            <div class="deployment-differentiator">
+                <div class="diff-card">
+                    <div class="diff-comparison">
+                        <div class="diff-item diff-not">
+                            <span class="diff-label">Not this:</span>
+                            <span class="diff-text">"We'll manage it for you"</span>
+                        </div>
+                        <div class="diff-divider"></div>
+                        <div class="diff-item diff-yes">
+                            <span class="diff-label">This:</span>
+                            <span class="diff-text">"Custom-built, then yours to run"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA with Lead Capture -->
+    <section class="footer-cta">
+        <div class="section-container">
+            <div class="footer-cta-content">
+                <h2 class="footer-cta-headline">Think you might be a fit?</h2>
+                <p class="footer-cta-text">We're selective about who we work with. Request a call to find out.</p>
+                
+                <!-- Footer Lead Capture Form -->
+                <div class="footer-capture" id="footerLeadCapture">
+                    <!-- Step 1: Email -->
+                    <div class="lead-step" id="footerStep1" data-step="1">
+                        <form class="hero-form" id="footerEmailForm">
+                            <div class="input-group">
+                                <input 
+                                    type="email" 
+                                    id="footerLeadEmail" 
+                                    placeholder="Enter your work email"
+                                    required
+                                    autocomplete="off"
+                                >
+                                <button type="submit" class="btn-primary">
+                                    <span>Request a Call</span>
+                                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"/>
+                                        <path d="m12 5 7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="input-hint">Talk directly with Preston to see if you're a fit</p>
+                            <p class="scarcity-note">Now accepting applicants for the <span class="cohort-badge" id="footerCohortBadge">Q2 2026</span> launch cohort</p>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Questions (hidden initially) -->
+                    <div class="lead-step hidden" id="footerStep2" data-step="2">
+                        <form class="lead-form" id="footerQuestionsForm">
+                            <div class="form-field">
+                                <label class="field-label">What are you most interested in?</label>
+                                <span class="field-hint">(Select all that apply)</span>
+                                <div class="checkbox-group" id="footerInterestsGroup">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="footerInterests" value="attribution">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Top-of-funnel measurement</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="footerInterests" value="creative">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Full-funnel creative analytics</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="footerInterests" value="merchandising">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Web merchandising & LTV</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="footerInterests" value="planning">
+                                        <span class="checkbox-box"></span>
+                                        <span class="checkbox-label">Demand planning & forecasting</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="footerProblems" class="field-label">What's your biggest challenge right now?</label>
+                                <textarea 
+                                    id="footerProblems" 
+                                    rows="2" 
+                                    placeholder="e.g., We can't measure brand impact..."
+                                ></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">
+                                <span>Continue</span>
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Calendar Selection (hidden initially) -->
+                    <div class="lead-step hidden" id="footerStep3" data-step="3">
+                        <div class="calendar-picker">
+                            <p class="calendar-intro">Pick a time for your demo:</p>
+                            <div class="slots-loading" id="footerSlotsLoading">
+                                <div class="spinner"></div>
+                                <span>Finding available times...</span>
+                            </div>
+                            <div class="slots-list hidden" id="footerSlotsList"></div>
+                            <button type="button" class="btn-primary btn-full hidden" id="footerBookBtn">
+                                <span>Book Meeting</span>
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation (hidden initially) -->
+                    <div class="lead-step hidden" id="footerStep4" data-step="4">
+                        <div class="confirmation">
+                            <div class="confirmation-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="m9 11 3 3L22 4"/>
+                                </svg>
+                            </div>
+                            <h3 class="confirmation-title">You're all set!</h3>
+                            <p class="confirmation-text" id="footerConfirmationText">Check your email for the invite.</p>
+                            <p class="confirmation-meeting" id="footerConfirmationMeeting"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="https://cdn.prod.website-files.com/67a4c53d7ce1c20ef8612c32/67a4c8da2c0d10ba0b93b863_marathon-logo.svg" alt="Marathon" class="footer-logo">
+                    <p class="footer-tagline">The First Unified Growth Operating System</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Platform</h4>
+                        <a href="#platform" class="footer-link">Overview</a>
+                        <a href="#approach" class="footer-link">Approach</a>
+                        <a href="#deployment" class="footer-link">How It Works</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Company</h4>
+                        <a href="https://app.marathondataco.com/sign-in" class="footer-link">Log In</a>
+                        <a href="mailto:p@marathondataco.com" class="footer-link">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Legal</h4>
+                        <a href="/terms-of-services" class="footer-link">Terms of Service</a>
+                        <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+                        <a href="/license-and-services-agreement" class="footer-link">License Agreement</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Marathon Data Co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
