@@ -1577,9 +1577,9 @@ footer {
 }
 
 .carl-bubble {
-  position: absolute;
-  bottom: 86px;
-  right: 10px;
+  position: fixed;
+  bottom: 110px;
+  right: 34px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1837,7 +1837,7 @@ footer {
   .hero-label-row { flex-direction: column; align-items: flex-start; gap: 8px; }
   .carl-mascot { bottom: 16px; right: 16px; }
   .carl-mascot svg { width: 64px; height: 64px; }
-  .carl-bubble { bottom: 70px; font-size: 12px; max-width: 200px; }
+  .carl-bubble { bottom: 86px; right: 16px; font-size: 12px; max-width: 280px; }
   .cursor-glow { display: none !important; }
   .footer-main { flex-direction: column; gap: 32px; }
   .footer-links { gap: 32px; }
@@ -2201,7 +2201,12 @@ footer {
   <div class="container">
     <span class="section-label magenta reveal">Proven Results</span>
     <h2 class="reveal">True Measured Incrementality</h2>
-    <p class="section-sub reveal">Causal impact on total business revenue, measured across 2&ndash;6 month geo-holdouts. Not model estimates&mdash;real markets, real spend, real lift. You&rsquo;re not just building the moat around your business&mdash;you&rsquo;re paying off the construction costs on the way in.</p>
+    <p class="section-sub reveal">Causal impact on total business revenue, measured across 2&ndash;6 month geo-holdouts. Not model estimates&mdash;real markets, real spend, real lift.</p>
+
+    <div class="chart-insight reveal" style="margin-top: 0; margin-bottom: 40px;">
+      <div style="font-size: 24px; flex-shrink: 0; color: var(--magenta);">&#8599;</div>
+      <p><strong style="color: var(--text-primary);">The payoff is immediate.</strong> The marginal DR dollars you redirect weren&rsquo;t driving profitable return where they were&mdash;shift them to brand and you&rsquo;re building the moat while paying off the construction costs on the way in.</p>
+    </div>
 
     <div class="results-grid">
       <div class="result-card reveal reveal-delay-1">
@@ -2487,9 +2492,9 @@ footer {
       <circle cx="20" cy="29.5" r="1" fill="none" stroke="#C9A84C" stroke-width="0.3" filter="url(#neon-glow-carl)"/>
     </g>
   </svg>
-  <div class="carl-bubble" id="carlBubble"></div>
   <div class="carl-particles" id="carlParticles"></div>
 </div>
+<div class="carl-bubble" id="carlBubble"></div>
 
 <canvas id="confettiCanvas"></canvas>
 
