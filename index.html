@@ -105,6 +105,7 @@ nav .container {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo img {
@@ -1029,6 +1030,11 @@ svg.chart-animated .lag-annotation {
   overflow-x: auto;
   padding: 20px 0;
   -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.cascade-scroll-hint {
+  display: none;
 }
 
 .cascade-node {
@@ -1257,7 +1263,8 @@ footer {
     gap: 40px;
   }
 
-  .hero { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
+  .hero { min-height: 100vh; min-height: 100dvh; padding-top: 120px; padding-bottom: 80px; }
+  .scroll-arrow { bottom: 24px; }
 
   .flywheel-callout {
     flex-direction: column;
@@ -1303,7 +1310,11 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .container { padding: 0 20px; }
+  .container { padding: 0 16px; }
+
+  .hero { padding-top: 80px; }
+  .scroll-arrow { bottom: 20px; }
+  .scroll-arrow svg { width: 28px; height: 28px; }
 
   .results-grid,
   .steps-grid {
@@ -1314,16 +1325,71 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .cta-section { padding: 100px 0; }
+  .cta-section { padding: 80px 0; }
 
   .lifecycle-track {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
+  .lifecycle-detail-card { padding: 20px 16px; }
+
+  .problem-card,
+  .efficiency-card { padding: 24px 20px; }
+
+  .step-card { padding: 24px 20px; }
+
+  .result-card { padding: 24px 20px; }
+  .result-metric { font-size: clamp(32px, 9vw, 42px); }
+
   .cascade-node {
     min-width: 110px;
     flex: 0 0 110px;
+  }
+
+  .cascade-wrapper {
+    position: relative;
+  }
+
+  .cascade-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    background: linear-gradient(to right, transparent, var(--bg-primary));
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+
+  .cascade-wrapper.scrolled-end::after {
+    opacity: 0;
+  }
+
+  .cascade-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-top: 8px;
+    opacity: 0.8;
+    animation: hintPulse 2s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+  }
+
+  .cascade-scroll-hint.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @keyframes hintPulse {
+    0%, 100% { transform: translateX(0); opacity: 0.8; }
+    50% { transform: translateX(4px); opacity: 1; }
   }
 
   .cascade-track {
@@ -1348,6 +1414,8 @@ footer {
     padding: 16px 12px;
   }
 
+  .chart-wrapper svg { height: 220px; }
+
   .lag-annotation {
     display: none;
   }
@@ -1356,12 +1424,16 @@ footer {
     padding: 20px 16px;
   }
 
+  .footer-link { min-height: 44px; display: flex; align-items: center; }
+
+  .hero-cta { padding: 16px 32px; }
+
   section {
-    padding: 56px 0;
+    padding: 48px 0;
   }
 
   .cta-section {
-    padding: 80px 0;
+    padding: 64px 0;
   }
 }
 
@@ -1765,11 +1837,14 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .logo img { height: 24px; }
+  .nav-cta { font-size: 12px; padding: 8px 14px; gap: 4px; }
+  .nav-cta .arrow { display: none; }
   .carl-mascot { bottom: 12px; right: 12px; }
-  .carl-mascot svg { width: 56px; height: 56px; }
-  .carl-bubble { bottom: 62px; right: 4px; font-size: 11px; padding: 6px 10px; max-width: 170px; }
+  .carl-mascot svg { width: 48px; height: 48px; }
+  .carl-bubble { display: none; }
   .ai-badge { font-size: 11px; padding: 3px 10px; }
-  .hero-cta, .nav-cta, .cta-button { min-height: 44px; }
+  .hero-cta, .cta-button { min-height: 44px; }
   .footer-links { flex-direction: column; gap: 24px; }
   .team-grid { grid-template-columns: 1fr; }
   .card-stats { gap: 12px; }
@@ -2091,6 +2166,7 @@ footer {
           </div>
         </div>
       </div>
+      <div class="cascade-scroll-hint" id="cascadeHint">Swipe to see full effect &rarr;</div>
       <p class="cascade-sub">This is how you scale past your plateau. A new source of incremental, profitable growth.</p>
     </div>
 
@@ -2472,6 +2548,17 @@ if (cascadeTrack) {
     });
   }, { threshold: 0.3 });
   cascadeObs.observe(cascadeTrack);
+
+  // Scroll hint: hide after user scrolls, update fade gradient
+  const cascadeHint = document.getElementById('cascadeHint');
+  const cascadeWrapper = cascadeTrack.closest('.cascade-wrapper');
+  cascadeTrack.addEventListener('scroll', function() {
+    if (cascadeHint) cascadeHint.classList.add('hidden');
+    if (cascadeWrapper) {
+      const atEnd = cascadeTrack.scrollLeft + cascadeTrack.clientWidth >= cascadeTrack.scrollWidth - 8;
+      cascadeWrapper.classList.toggle('scrolled-end', atEnd);
+    }
+  }, { passive: true });
 }
 
 
