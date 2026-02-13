@@ -239,6 +239,33 @@ nav .container {
   transform: translateX(3px);
 }
 
+/* Scroll Down Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  cursor: pointer;
+}
+
+.scroll-arrow.visible {
+  opacity: 1;
+}
+
+.scroll-arrow svg {
+  width: 36px;
+  height: 36px;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
 /* ============================================================
    SECTION TYPOGRAPHY
    ============================================================ */
@@ -1772,10 +1799,13 @@ footer {
       <a href="https://app.marathondataco.com/onboarding/create-account" class="hero-cta">See Your Brand Value <span class="arrow">&rarr;</span></a>
     </div>
   </div>
+  <a href="#problem" class="scroll-arrow" id="scrollArrow" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24"><path d="M6 9 L12 15 L18 9" stroke="rgba(170,170,187,0.7)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </section>
 
 <!-- PROBLEM -->
-<section class="problem-section">
+<section id="problem" class="problem-section">
   <div class="container">
     <span class="section-label magenta reveal">The Problem</span>
     <h2 class="reveal">The Performance Marketing Treadmill Is Breaking Down</h2>
@@ -2072,8 +2102,8 @@ footer {
 <section class="results-section">
   <div class="container">
     <span class="section-label magenta reveal">Proven Results</span>
-    <h2 class="reveal">Validated With Controlled Experiments</h2>
-    <p class="section-sub reveal">Geo-holdout incrementality tests across categories. Not model estimates&mdash;measured causal impact. No drop in short-term revenue, because the dollars you shift aren&rsquo;t driving profitable acquisition anyway.</p>
+    <h2 class="reveal">True Measured Incrementality</h2>
+    <p class="section-sub reveal">Geo-holdout incrementality tests across categories. Not model estimates&mdash;real, measured causal impact. These results are delivered purely on top-of-funnel brand spend&mdash;investment that clearly pays out over a much longer timeframe than performance marketing. No drop in short-term revenue, because the dollars you shift aren&rsquo;t driving profitable acquisition anyway.</p>
 
     <div class="results-grid">
       <div class="result-card reveal reveal-delay-1">
@@ -2152,8 +2182,8 @@ footer {
     <div class="team-header reveal">
       <span class="section-label" style="color: var(--teal); border-color: var(--teal-glow);">The Team</span>
       <h2>Meet the Marathon Team</h2>
-      <p>Six AI agents. One team. Every insight one finds, the others use. They learn together, work together, and never sleep.</p>
-      <div class="team-online-badge"><span class="team-pulse"></span> Working right now &mdash; 24/7/365</div>
+      <p>Six AI agents powering the engine behind the scenes. Every insight one finds, the others use. They learn together, work together, and never sleep&mdash;and they&rsquo;re coming to the forefront soon.</p>
+      <div class="team-online-badge" style="background: rgba(78, 205, 196, 0.08); border-color: rgba(78, 205, 196, 0.15);"><span class="team-pulse" style="background: var(--teal);"></span> Training now &mdash; coming to you soon</div>
     </div>
 
     <div class="team-grid">
@@ -2286,7 +2316,7 @@ footer {
 
     </div>
 
-    <p class="team-footer reveal">Team means shared context. Every signal Carl finds, Sally validates. Every pattern Otto spots, Isabel confirms. Every test Gus runs, Max scores. They learn together, work together, and never sleep.</p>
+    <p class="team-footer reveal">Team means shared context. Every signal Carl finds, Sally validates. Every pattern Otto spots, Isabel confirms. Every test Gus runs, Max scores. Right now they power our analysis behind the scenes&mdash;soon they&rsquo;ll be working directly for you.</p>
   </div>
 </section>
 
@@ -2371,6 +2401,26 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 });
+
+// Scroll down arrow — appears after 2.5s, pulses, hides on scroll or after cycle
+(function initScrollArrow() {
+  const arrow = document.getElementById('scrollArrow');
+  if (!arrow) return;
+  let hidden = false;
+  function showArrow() {
+    if (hidden || window.scrollY > 100) return;
+    arrow.classList.add('visible');
+    setTimeout(() => {
+      arrow.classList.remove('visible');
+      if (!hidden) setTimeout(showArrow, 3000);
+    }, 3000);
+  }
+  setTimeout(showArrow, 2500);
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { hidden = true; arrow.classList.remove('visible'); }
+  }, { passive: true });
+  arrow.addEventListener('click', () => { hidden = true; });
+})();
 
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
