@@ -1842,7 +1842,22 @@ footer {
   .nav-cta .arrow { display: none; }
   .carl-mascot { bottom: 12px; right: 12px; }
   .carl-mascot svg { width: 48px; height: 48px; }
-  .carl-bubble { display: none; }
+  .carl-bubble {
+    position: fixed;
+    bottom: 68px;
+    right: 12px;
+    left: 12px;
+    max-width: none;
+    min-width: 0;
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    text-align: center;
+    background: rgba(26, 26, 40, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .carl-bubble::after { display: none; }
   .ai-badge { font-size: 11px; padding: 3px 10px; }
   .hero-cta, .cta-button { min-height: 44px; }
   .footer-links { flex-direction: column; gap: 24px; }
