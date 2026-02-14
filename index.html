@@ -1872,18 +1872,26 @@ footer {
     position: fixed;
     bottom: 68px;
     right: 12px;
-    left: 12px;
-    max-width: none;
+    left: auto;
+    max-width: 260px;
     min-width: 0;
     font-size: 12px;
-    padding: 8px 14px;
+    padding: 10px 14px;
     border-radius: 12px;
-    text-align: center;
-    background: rgba(26, 26, 40, 0.95);
+    text-align: left;
+    background: rgba(20, 20, 35, 0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(232, 74, 138, 0.45);
+    box-shadow: 0 0 12px rgba(232, 74, 138, 0.15), 0 4px 16px rgba(0,0,0,0.4);
   }
-  .carl-bubble::after { display: none; }
+  .carl-bubble::after {
+    display: block;
+    right: 18px;
+    border-right-color: rgba(232, 74, 138, 0.45);
+    border-bottom-color: rgba(232, 74, 138, 0.45);
+    background: rgba(20, 20, 35, 0.97);
+  }
   .ai-badge { font-size: 11px; padding: 3px 10px; }
   .hero-cta, .cta-button { min-height: 44px; }
   .footer-links { flex-direction: column; gap: 24px; }
