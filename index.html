@@ -566,6 +566,102 @@ h3 {
    RESULTS / PROOF
    ============================================================ */
 
+.results-visuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.results-visual-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.results-visual-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.results-visual-card .visual-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.lift-chart-svg {
+  width: 100%;
+  height: auto;
+}
+
+.lift-chart-svg .lift-area {
+  fill: url(#liftGradient);
+  opacity: 0;
+  animation: fadeInArea 1.5s ease 0.5s forwards;
+}
+
+.lift-chart-svg .test-line {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.lift-chart-svg .control-line {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 6,4;
+}
+
+.lift-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.lift-legend span {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lift-legend .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.moat-svg {
+  width: 100%;
+  height: auto;
+}
+
+.moat-ring {
+  transform-origin: center;
+}
+
+.moat-ring-1 { animation: moatPulse 4s ease-in-out infinite; }
+.moat-ring-2 { animation: moatPulse 4s ease-in-out 0.6s infinite; }
+.moat-ring-3 { animation: moatPulse 4s ease-in-out 1.2s infinite; }
+
+@keyframes moatPulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes fadeInArea {
+  to { opacity: 1; }
+}
+
 .results-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1272,6 +1368,10 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  .results-visuals {
+    grid-template-columns: 1fr;
+  }
+
   .results-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1367,6 +1467,8 @@ footer {
 
   .result-card { padding: 24px 20px; }
   .result-metric { font-size: clamp(32px, 9vw, 42px); }
+  .results-visual-card { padding: 16px; }
+  .results-visual-card h3 { font-size: 14px; }
 
   .cascade-node {
     min-width: 110px;
@@ -2077,11 +2179,76 @@ footer {
   <div class="container">
     <span class="section-label magenta reveal">Proven Results</span>
     <h2 class="reveal">True Measured Incrementality</h2>
-    <p class="section-sub reveal">Causal impact on total business revenue, measured across 2&ndash;6 month geo-holdouts. Not model estimates&mdash;real markets, real spend, real lift.</p>
+    <p class="section-sub reveal">Causal impact on total business revenue, delivered purely from top-of-funnel brand campaigns across 2&ndash;6 month geo-holdouts. Not model estimates&mdash;real markets, real spend, real lift.</p>
 
     <div class="chart-insight reveal" style="margin-top: 0; margin-bottom: 40px;">
       <div style="font-size: 24px; flex-shrink: 0; color: var(--magenta);">&#8599;</div>
-      <p><strong style="color: var(--text-primary);">The payoff is immediate.</strong> The marginal DR dollars you redirect weren&rsquo;t driving profitable return where they were&mdash;shift them to brand and you&rsquo;re building the moat while paying off the construction costs on the way in.</p>
+      <p><strong style="color: var(--text-primary);">Not only are you building your moat&mdash;you&rsquo;re immediately paying off the construction costs.</strong> The marginal DR dollars you redirect weren&rsquo;t generating profitable return where they were. Shift them to brand and the payoff starts day one.</p>
+    </div>
+
+    <div class="results-visuals">
+      <!-- Geo-Holdout Lift Chart -->
+      <div class="results-visual-card reveal">
+        <h3>Geo-Holdout Test</h3>
+        <p class="visual-sub">Test markets receive brand spend. Control markets don&rsquo;t. The gap is your causal lift.</p>
+        <div class="lift-legend">
+          <span><span class="dot" style="background: var(--teal);"></span> Test Markets (TOF Brand)</span>
+          <span><span class="dot" style="background: var(--text-muted);"></span> Control (No Brand Spend)</span>
+        </div>
+        <svg class="lift-chart-svg" viewBox="0 0 500 220" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="liftGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--teal)" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="var(--teal)" stop-opacity="0.02"/>
+            </linearGradient>
+          </defs>
+          <!-- Grid -->
+          <line class="grid-line" x1="40" y1="30" x2="480" y2="30"/>
+          <line class="grid-line" x1="40" y1="80" x2="480" y2="80"/>
+          <line class="grid-line" x1="40" y1="130" x2="480" y2="130"/>
+          <!-- Axes -->
+          <line class="axis-line" x1="40" y1="15" x2="40" y2="185"/>
+          <line class="axis-line" x1="40" y1="185" x2="480" y2="185"/>
+          <!-- Test start marker -->
+          <line x1="120" y1="15" x2="120" y2="185" stroke="var(--border)" stroke-width="1" stroke-dasharray="4,4"/>
+          <text x="120" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="9">Test begins</text>
+          <!-- X labels -->
+          <text x="40" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="9">0</text>
+          <text x="300" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="9">3mo</text>
+          <text x="480" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="9">6mo</text>
+          <!-- Lift area -->
+          <path class="lift-area" d="M120,155 C180,150 240,138 300,120 C360,100 420,75 480,50 L480,155 C420,148 360,142 300,138 C240,135 180,133 120,132 Z"/>
+          <!-- Control line (dashed, gentle rise) -->
+          <path class="control-line" d="M40,165 C60,163 80,160 120,155 C180,150 240,145 300,138 C360,132 420,127 480,122"/>
+          <!-- Test line (solid, steep rise) -->
+          <path class="test-line" d="M40,165 C60,163 80,160 120,155 C180,142 240,118 300,92 C360,68 420,50 480,32"/>
+          <!-- Causal lift annotation -->
+          <line x1="390" y1="56" x2="390" y2="130" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <text x="405" y="96" fill="var(--gold)" font-size="11" font-weight="600">Causal</text>
+          <text x="405" y="109" fill="var(--gold)" font-size="11" font-weight="600">Lift</text>
+        </svg>
+      </div>
+
+      <!-- Moat Building Visual -->
+      <div class="results-visual-card reveal">
+        <h3>Building Your Growth Moat</h3>
+        <p class="visual-sub">Each layer of brand investment compounds into a defensible asset.</p>
+        <svg class="moat-svg" viewBox="0 0 300 240" preserveAspectRatio="xMidYMid meet">
+          <!-- Outer ring 3 — Baseline Revenue -->
+          <ellipse class="moat-ring moat-ring-3" cx="150" cy="130" rx="138" ry="95" fill="none" stroke="var(--magenta)" stroke-width="1.5" stroke-dasharray="8,4"/>
+          <!-- Ring 2 — Organic Traffic -->
+          <ellipse class="moat-ring moat-ring-2" cx="150" cy="130" rx="105" ry="72" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="8,4"/>
+          <!-- Ring 1 — Brand Searches -->
+          <ellipse class="moat-ring moat-ring-1" cx="150" cy="130" rx="72" ry="50" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="8,4"/>
+          <!-- Center — Your Brand -->
+          <rect x="113" y="113" width="74" height="34" rx="8" fill="var(--bg-card)" stroke="var(--text-primary)" stroke-width="1"/>
+          <text x="150" y="135" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">Your Brand</text>
+          <!-- Labels -->
+          <text x="150" y="22" text-anchor="middle" fill="var(--magenta)" font-size="10" font-weight="500">Baseline Revenue</text>
+          <text x="150" y="48" text-anchor="middle" fill="var(--gold)" font-size="10" font-weight="500">Organic Traffic</text>
+          <text x="150" y="70" text-anchor="middle" fill="var(--teal)" font-size="10" font-weight="500">Brand Searches</text>
+        </svg>
+      </div>
     </div>
 
     <div class="results-grid">
