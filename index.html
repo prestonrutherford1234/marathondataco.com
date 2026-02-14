@@ -438,28 +438,38 @@ h3 {
   padding: 16px 0;
 }
 
-.brand-benefits {
-  list-style: none;
+.brand-delivers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
 }
 
-.brand-benefits li {
-  padding: 10px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--text-secondary);
+.brand-delivers-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
 }
 
-.brand-benefits li::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--teal);
-  flex-shrink: 0;
-  margin-top: 8px;
+.brand-delivers-card .icon {
+  font-size: 24px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.brand-delivers-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.brand-delivers-card p {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 /* ============================================================
@@ -1258,6 +1268,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .brand-delivers-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .results-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1326,6 +1340,10 @@ footer {
 
   .results-grid,
   .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-delivers-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1982,7 +2000,7 @@ footer {
           <li>Resilient baseline revenue that keeps showing up&mdash;even if you slow promos</li>
           <li>Seeing how brand-building video content drives short-term KPIs and feeds the flywheel</li>
           <li>Contribution margin going up as you acquire more people via owned channels</li>
-          <li>Confidently investing in reach and view-based media</li>
+          <li>Confidently investing in brand actions and engagements that drive future revenue&mdash;not passive views and reach</li>
         </ul>
       </div>
     </div>
@@ -2014,15 +2032,91 @@ footer {
 
       <div class="insight-visual reveal">
         <h3 style="margin-bottom: 16px;">A Strong Brand Delivers:</h3>
-        <ul class="brand-benefits">
-          <li>Makes paid media more efficient by creating a sustainable customer pipeline</li>
-          <li>Protects margins from competitive pressure and rising CPMs</li>
-          <li>Shifts revenue from expensive paid clicks to high-margin organic traffic</li>
-          <li>Reduces reliance on discounting to drive growth</li>
-          <li>Builds a compounding asset competitors can&rsquo;t copy</li>
-        </ul>
+        <div class="brand-delivers-grid">
+          <div class="brand-delivers-card">
+            <div class="icon">&#8599;</div>
+            <h4>Paid Efficiency</h4>
+            <p>Creates a sustainable customer pipeline that makes every ad dollar work harder</p>
+          </div>
+          <div class="brand-delivers-card">
+            <div class="icon">&#9650;</div>
+            <h4>Margin Protection</h4>
+            <p>Insulates margins from competitive pressure and rising CPMs</p>
+          </div>
+          <div class="brand-delivers-card">
+            <div class="icon">&#8635;</div>
+            <h4>Organic Revenue</h4>
+            <p>Shifts revenue from expensive paid clicks to high-margin organic traffic</p>
+          </div>
+          <div class="brand-delivers-card">
+            <div class="icon">&#10003;</div>
+            <h4>Less Discounting</h4>
+            <p>Reduces reliance on promotions and markdowns to hit growth targets</p>
+          </div>
+          <div class="brand-delivers-card">
+            <div class="icon">&#8734;</div>
+            <h4>Compounding Asset</h4>
+            <p>Builds a moat that compounds over time&mdash;one competitors can&rsquo;t copy</p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="container">
+    <span class="section-label magenta reveal">Proven Results</span>
+    <h2 class="reveal">True Measured Incrementality</h2>
+    <p class="section-sub reveal">Causal impact on total business revenue, measured across 2&ndash;6 month geo-holdouts. Not model estimates&mdash;real markets, real spend, real lift.</p>
+
+    <div class="chart-insight reveal" style="margin-top: 0; margin-bottom: 40px;">
+      <div style="font-size: 24px; flex-shrink: 0; color: var(--magenta);">&#8599;</div>
+      <p><strong style="color: var(--text-primary);">The payoff is immediate.</strong> The marginal DR dollars you redirect weren&rsquo;t driving profitable return where they were&mdash;shift them to brand and you&rsquo;re building the moat while paying off the construction costs on the way in.</p>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card reveal reveal-delay-1">
+        <span class="result-label">~$40M Coffee Brand</span>
+        <span class="result-metric">2.0x</span>
+        <span class="result-desc">Incremental Brand ROAS. Biggest impact in-store. 3x higher than equivalent DR spend.</span>
+      </div>
+      <div class="result-card reveal reveal-delay-2">
+        <span class="result-label">~$100M Beauty Brand</span>
+        <span class="result-metric">2.4x</span>
+        <span class="result-desc">Validated incrementality. New way to spend that unlocked growth and brought CAC down.</span>
+      </div>
+      <div class="result-card reveal reveal-delay-3">
+        <span class="result-label">~$30M Wellness Brand</span>
+        <span class="result-metric">1.7x</span>
+        <span class="result-desc">Biggest lift in paid and new customer revenue. Email &amp; SMS revenue saw massive lift too.</span>
+      </div>
+      <div class="result-card reveal reveal-delay-4">
+        <span class="result-label">~$15M Grooming Brand</span>
+        <span class="result-metric">1.7x</span>
+        <span class="result-desc">Consistent results across categories. Same pattern: brand investment drives incremental revenue.</span>
+      </div>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="quote-card reveal reveal-delay-1">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">New customer CAC has come down 30%.</p>
+        <p class="quote-attr">After 2 months on the Marathon Playbook</p>
+      </div>
+      <div class="quote-card reveal reveal-delay-2">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">Profit is up 4x. We just had our best day ever outside of BFCM.</p>
+        <p class="quote-attr">After 6 weeks of brand-optimized spend</p>
+      </div>
+      <div class="quote-card reveal reveal-delay-3">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">This ad has the lowest CAC of any ad I&rsquo;ve run in 4 months&mdash;and it&rsquo;s on my most expensive product.</p>
+        <p class="quote-attr">An organic post they never would have used as an ad without Marathon</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2191,62 +2285,6 @@ footer {
       </div>
       <div class="cascade-scroll-hint" id="cascadeHint">Swipe to see full effect &rarr;</div>
       <p class="cascade-sub">This is how you scale past your plateau. A new source of incremental, profitable growth.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section class="results-section">
-  <div class="container">
-    <span class="section-label magenta reveal">Proven Results</span>
-    <h2 class="reveal">True Measured Incrementality</h2>
-    <p class="section-sub reveal">Causal impact on total business revenue, measured across 2&ndash;6 month geo-holdouts. Not model estimates&mdash;real markets, real spend, real lift.</p>
-
-    <div class="chart-insight reveal" style="margin-top: 0; margin-bottom: 40px;">
-      <div style="font-size: 24px; flex-shrink: 0; color: var(--magenta);">&#8599;</div>
-      <p><strong style="color: var(--text-primary);">The payoff is immediate.</strong> The marginal DR dollars you redirect weren&rsquo;t driving profitable return where they were&mdash;shift them to brand and you&rsquo;re building the moat while paying off the construction costs on the way in.</p>
-    </div>
-
-    <div class="results-grid">
-      <div class="result-card reveal reveal-delay-1">
-        <span class="result-label">~$40M Coffee Brand</span>
-        <span class="result-metric">2.0x</span>
-        <span class="result-desc">Incremental Brand ROAS. Biggest impact in-store. 3x higher than equivalent DR spend.</span>
-      </div>
-      <div class="result-card reveal reveal-delay-2">
-        <span class="result-label">~$100M Beauty Brand</span>
-        <span class="result-metric">2.4x</span>
-        <span class="result-desc">Validated incrementality. New way to spend that unlocked growth and brought CAC down.</span>
-      </div>
-      <div class="result-card reveal reveal-delay-3">
-        <span class="result-label">~$30M Wellness Brand</span>
-        <span class="result-metric">1.7x</span>
-        <span class="result-desc">Biggest lift in paid and new customer revenue. Email &amp; SMS revenue saw massive lift too.</span>
-      </div>
-      <div class="result-card reveal reveal-delay-4">
-        <span class="result-label">~$15M Grooming Brand</span>
-        <span class="result-metric">1.7x</span>
-        <span class="result-desc">Consistent results across categories. Same pattern: brand investment drives incremental revenue.</span>
-      </div>
-    </div>
-
-    <div class="quotes-grid">
-      <div class="quote-card reveal reveal-delay-1">
-        <div class="quote-mark">&ldquo;</div>
-        <p class="quote-text">New customer CAC has come down 30%.</p>
-        <p class="quote-attr">After 2 months on the Marathon Playbook</p>
-      </div>
-      <div class="quote-card reveal reveal-delay-2">
-        <div class="quote-mark">&ldquo;</div>
-        <p class="quote-text">Profit is up 4x. We just had our best day ever outside of BFCM.</p>
-        <p class="quote-attr">After 6 weeks of brand-optimized spend</p>
-      </div>
-      <div class="quote-card reveal reveal-delay-3">
-        <div class="quote-mark">&ldquo;</div>
-        <p class="quote-text">This ad has the lowest CAC of any ad I&rsquo;ve run in 4 months&mdash;and it&rsquo;s on my most expensive product.</p>
-        <p class="quote-attr">An organic post they never would have used as an ad without Marathon</p>
-      </div>
     </div>
 
   </div>
